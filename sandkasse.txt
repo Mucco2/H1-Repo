@@ -1,0 +1,470 @@
+using System;
+
+namespace sandkasse1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // Console.WriteLine("Hej Verden");
+            // Console.ReadKey();
+
+
+
+            //String Navn = "mirsad";
+            //Console.WriteLine(Navn);
+            //Console.ReadKey();
+
+
+
+
+            //    double tal1, tal2;
+
+            //    // Hent tal fra brugeren med fejlhåndtering
+            //    Console.Write("Indtast det første tal: ");
+            //    while (!double.TryParse(Console.ReadLine(), out tal1)) {
+            //        Console.Write("Ugyldigt input. Indtast et gyldigt tal: ");
+            //    }
+
+            //    Console.Write("Indtast det andet tal: ");
+            //    while (!double.TryParse(Console.ReadLine(), out tal2)) {
+            //        Console.Write("Ugyldigt input. Indtast et gyldigt tal: ");
+            //    }
+
+            //    // Udfør og vis operationerne
+            //    Console.WriteLine($"Addition: {Addition(tal1, tal2)}");
+            //    Console.WriteLine($"Subtraktion: {Subtraktion(tal1, tal2)}");
+            //    Console.WriteLine($"Multiplikation: {Multiplikation(tal1, tal2)}");
+
+            //    // Undgå division med nul
+            //    if (tal2 != 0) {
+            //        Console.WriteLine($"Division: {Division(tal1, tal2)}");
+            //    }
+            //    else {
+            //        Console.WriteLine("Division med nul er ikke tilladt.");
+            //    }
+            //}
+
+            //// Metode for addition
+            //static double Addition(double a, double b)
+            //{
+            //    return a + b;
+            //}
+
+            //// Metode for subtraktion
+            //static double Subtraktion(double a, double b)
+            //{
+            //    return a - b;
+            //}
+
+            //// Metode for multiplikation
+            //static double Multiplikation(double a, double b)
+            //{
+            //    return a * b;
+            //}
+
+            //// Metode for division
+            //static double Division(double a, double b)
+            //{
+            //    return a / b;
+            //}
+
+
+
+
+
+                         //// Hent brugerens alder
+            //Console.Write("Indtast din alder: ");
+            //int alder;
+
+            //// Tjek om indtastningen er et gyldigt tal
+            //while (!int.TryParse(Console.ReadLine(), out alder) || alder < 0) {
+            //    Console.Write("Ugyldigt input. Indtast en gyldig alder (et positivt tal): ");
+            //}
+
+            //// Brug kontrolstruktur til at afgøre, om brugeren er myndig
+            //if (alder >= 18) {
+            //    Console.WriteLine("Du er myndig.");
+            //}
+            //else {
+            //    Console.WriteLine("Du er ikke myndig.");
+            //}
+            //Console.ReadKey();
+
+
+
+
+
+//// Velkomstbesked
+//Console.WriteLine("Indtast en temperatur i Fahrenheit for at konvertere til Celsius.");
+
+//// Læs input fra brugeren
+//Console.Write("Indtast temperatur i Fahrenheit: ");
+//string input = Console.ReadLine();
+
+//// Forsøg at konvertere input til en double
+//if (double.TryParse(input, out double fahrenheit)) {
+//    // Beregn Celsius
+//    double celsius = (fahrenheit - 32) * 5 / 9;
+
+//    // Vis resultatet
+//    Console.WriteLine($"{fahrenheit}°F er lig med {celsius:F2}°C.");
+//}
+//else {
+//    // Fejlbesked ved ugyldigt input
+//    Console.WriteLine("Ugyldigt input. Indtast venligst et gyldigt tal.");
+//}
+
+//// Vent på, at brugeren trykker en tast, før programmet afsluttes
+//Console.WriteLine("Tryk på en vilkårlig tast for at afslutte programmet.");
+//Console.ReadKey(true);
+
+
+
+
+
+        Console.WriteLine("Velkommen til den simple lommeregner!");
+        Console.WriteLine("Vælg en operation:");
+        Console.WriteLine("1. Addition (+)");
+        Console.WriteLine("2. Subtraktion (-)");
+        Console.WriteLine("3. Multiplikation (*)");
+        Console.WriteLine("4. Division (/)");
+
+        // Læs brugerens valg
+        Console.Write("Indtast dit valg (1-4): ");
+        string operation = Console.ReadLine();
+
+        // Læs to tal fra brugeren
+        Console.Write("Indtast det første tal: ");
+        double number1 = ReadNumber();
+
+        Console.Write("Indtast det andet tal: ");
+        double number2 = ReadNumber();
+
+        // Udfør operationen
+        double result;
+        switch (operation) {
+            case "1":
+                result = Add(number1, number2);
+                Console.WriteLine($"Resultatet af {number1} + {number2} er {result}");
+                break;
+            case "2":
+                result = Subtract(number1, number2);
+                Console.WriteLine($"Resultatet af {number1} - {number2} er {result}");
+                break;
+            case "3":
+                result = Multiply(number1, number2);
+                Console.WriteLine($"Resultatet af {number1} * {number2} er {result}");
+                break;
+            case "4":
+                if (number2 != 0) {
+                    result = Divide(number1, number2);
+                    Console.WriteLine($"Resultatet af {number1} / {number2} er {result}");
+                }
+                else {
+                    Console.WriteLine("Fejl: Division med 0 er ikke tilladt.");
+                }
+                break;
+            default:
+                Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                break;
+        }
+
+        // Vent på, at brugeren trykker en tast
+        Console.WriteLine("Tryk på en vilkårlig tast for at afslutte.");
+        Console.ReadKey(true);
+    }
+
+    // Metode til at læse et tal fra brugeren og validere input
+    static double ReadNumber()
+    {
+        while (true) {
+            string input = Console.ReadLine();
+            if (double.TryParse(input, out double number)) {
+                return number;
+            }
+            Console.Write("Ugyldigt input. Indtast et gyldigt tal: ");
+        }
+    }
+
+    // Metode til addition
+    static double Add(double a, double b)
+    {
+        return a + b;
+    }
+
+    // Metode til subtraktion
+    static double Subtract(double a, double b)
+    {
+        return a - b;
+    }
+
+    // Metode til multiplikation
+    static double Multiply(double a, double b)
+    {
+        return a * b;
+    }
+
+    // Metode til division
+    static double Divide(double a, double b)
+    {
+        return a / b;
+    }
+}
+
+
+
+
+//    {
+//        // Kald metoden for at vise velkomstbeskeden
+//        PrintWelcomeMessage();
+
+//        // Eventuel yderligere programlogik kan placeres her
+//        Console.WriteLine("Programmet er nu klar til brug.");
+//    }
+
+//    // Metode uden returværdi, der udskriver en velkomstbesked
+//    static void PrintWelcomeMessage()
+//    {
+//        Console.WriteLine("Velkommen til programmet!");
+//        Console.WriteLine("Dette program demonstrerer metoder uden returværdi.");
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+        //for (int i = 1; i < 11; i++) {
+        //    Console.WriteLine(i);
+        //    Console.ReadKey();
+
+
+
+
+        //string[] frugter = { "Banan", "Vandmelon", "Kiwi", "jordbær" };
+        //Console.WriteLine(frugter[0]);
+        //Console.WriteLine(frugter[1]);
+        //Console.WriteLine(frugter[2]);
+        //Console.WriteLine(frugter[3]);
+        //Console.ReadKey(true);
+
+
+
+        //int[,] numbers = { { 31, 31 }, { 42, 42 } };
+
+        //// Iterer gennem matrixens rækker og kolonner
+        //for (int i = 0; i < numbers.GetLength(0); i++) // Rækker
+        //{
+        //    for (int j = 0; j < numbers.GetLength(1); j++) // Kolonner
+        //    {
+        //        // Udskriv værdien på den aktuelle plads
+        //        Console.Write(numbers[i, j] + " ");
+        //    }
+        //    // Ny linje efter hver række
+        //    Console.WriteLine();
+        //}
+
+        //// Vent på, at brugeren trykker en tast
+        //Console.WriteLine("Tryk på en vilkårlig tast for at afslutte.");
+        //Console.ReadKey(true);
+
+
+
+ //// Definer en konstant for moms
+ //const double VAT_RATE = 0.25;
+
+ //// Bed brugeren om at indtaste en pris
+ //Console.Write("Indtast en pris (uden moms): ");
+ //string input = Console.ReadLine();
+
+ //// Forsøg at konvertere input til en double
+ //if (double.TryParse(input, out double price)) {
+ //    // Beregn moms og total pris
+ //    double vat = price * VAT_RATE;
+ //    double totalPrice = price + vat;
+
+ //    // Udskriv resultaterne
+ //    Console.WriteLine($"Pris uden moms: {price:F2} kr");
+ //    Console.WriteLine($"Moms (25%): {vat:F2} kr");
+ //    Console.WriteLine($"Pris med moms: {totalPrice:F2} kr");
+ //}
+ //else {
+ //    // Fejlbesked ved ugyldigt input
+ //    Console.WriteLine("Ugyldigt input. Indtast venligst et gyldigt tal.");
+ //}
+
+ //// Vent på, at brugeren trykker en tast, før programmet afsluttes
+ //Console.WriteLine("Tryk på en vilkårlig tast for at afslutte.");
+ //Console.ReadKey(true);
+
+
+
+
+                //// Array til at gemme brugerens input
+                //int[] numbers = new int[3];
+
+                //// Læs tre tal fra brugeren
+                //for (int i = 0; i < numbers.Length; i++) {
+                //    Console.WriteLine($"Indtast tal {i + 1}:");
+                //    numbers[i] = int.Parse(Console.ReadLine());
+                //}
+
+
+                //// Sortér tallene i stigende rækkefølge
+                //Array.Sort(numbers);
+
+                //// Vis tallene i stigende rækkefølge
+                //Console.WriteLine("Tallene i stigende rækkefølge:");
+                //foreach (int num in numbers) {
+                //    Console.WriteLine(num);
+                //}
+
+                //// Vent på, at brugeren trykker en tast
+                //Console.ReadKey();
+
+
+
+
+
+
+
+
+
+    //    Console.WriteLine("Velkommen til BMI Beregneren");
+
+    //    try {
+    //        // Indhent vægt og højde fra brugeren
+    //        double vægt = GetVægt();
+    //        double højde = GetHøjde();
+
+    //        // Beregn BMI
+    //        double BMI = BeregnBMI(vægt, højde);
+
+    //        // Vis resultatet
+    //        Console.WriteLine("Din BMI er: " + Math.Round(BMI, 2));
+
+    //        // Klassificér BMI
+    //        string kategori = KlassificerBMI(BMI);
+    //        Console.WriteLine("Din BMI-kategori er: " + kategori);
+    //    }
+    //    catch (Exception ex) {
+    //        Console.WriteLine("Der opstod en fejl: " + ex.Message);
+    //    }
+    //}
+
+    //static double GetVægt()
+    //{
+    //    while (true) {
+    //        Console.WriteLine("Indtast din vægt i kg: ");
+    //        if (double.TryParse(Console.ReadLine(), out double vægt) && vægt > 0) {
+    //            return vægt;
+    //        }
+    //        Console.WriteLine("Ugyldigt input. Vægt skal være et positivt tal.");
+    //    }
+    //}
+
+    //static double GetHøjde()
+    //{
+    //    while (true) {
+    //        Console.WriteLine("Indtast din højde i meter: ");
+    //        if (double.TryParse(Console.ReadLine(), out double højde) && højde > 0) {
+    //            return højde;
+    //        }
+    //        Console.WriteLine("Ugyldigt input. Højde skal være et positivt tal.");
+    //    }
+    //}
+
+    //static double BeregnBMI(double vægt, double højde)
+    //{
+    //    return vægt / (højde * højde);
+    //}
+
+    //static string KlassificerBMI(double BMI)
+    //{
+    //    if (BMI < 18.5) {
+    //        return "Undervægtig";
+    //    }
+    //    else if (BMI >= 18.5 && BMI < 25) {
+    //        return "Normalvægtig";
+    //    }
+    //    else if (BMI >= 25 && BMI < 30) {
+    //        return "Overvægtig";
+    //    }
+    //    else {
+    //        return "Svært overvægtig (fedme)";
+
+
+
+
+
+
+
+
+
+
+
+        //// Bed brugeren om at indtaste deres navn
+        //Console.WriteLine("Indtast dit navn:");
+        //string navn = Console.ReadLine();
+
+        //// Bed brugeren om at indtaste deres alder
+        //Console.WriteLine("Indtast din alder:");
+        //string alderInput = Console.ReadLine();
+
+        //// Konverter alder fra tekst til tal
+        //if (int.TryParse(alderInput, out int alder) && alder >= 0) {
+        //    // Formater og udskriv resultaterne
+        //    string output = $"Hej, {navn}! Du er {alder} år gammel.";
+        //    Console.WriteLine(output);
+        //}
+        //else {
+        //    Console.WriteLine("Ugyldigt input. Alder skal være et positivt tal.");
+        //}
+
+        //// Vent på, at brugeren trykker en tast, før programmet afsluttes
+        //Console.ReadKey();
+
+
+
+
+
+        //  Console.WriteLine("vælge et tal mellem 1 og 10 og se om du kan finde den hemmelige tal");
+        //Console.WriteLine("Skriv dit gæt: ");
+        //int guess = Convert.ToInt32(Console.ReadLine());
+        //int secretNumber = 7;
+        //Console.WriteLine("du valgte : " + guess);
+        //if (guess == secretNumber) {
+        //    Console.WriteLine("Tillykke! Du har gættet det hemmelige tal!");
+        //}
+        //else {
+        //    Console.WriteLine("Desværre, det hemmelige tal er ikke " + guess);
+        //}
+        //Console.WriteLine("tryk på en tast for at afslutte programmet");
+        //Console.ReadKey();
+
+
+
+
+
+        //Console.WriteLine("Velkommen til basis login system");
+        //Console.WriteLine("Indtast brugernavn og Adgangskode for at logge ind:");
+        //Console.WriteLine("Brugernavn:");
+        //string brugernavn = Console.ReadLine();
+        //Console.WriteLine("Adgangskode:");
+        //string adgangskode = Console.ReadLine();
+        //Console.WriteLine("Logger ind...");
+        //if (brugernavn == "admin" && adgangskode == "1234") {
+        //    Console.WriteLine("Du er nu logget ind!");
+        //}
+        //else {
+        //    Console.WriteLine("Forkert brugernavn eller adgangskode!");
+        //}
+        //Console.WriteLine("Tryk på en vilkårlig tast for at afslutte programmet");
+        //Console.ReadKey();
+    //    }
+
+        }
+    }
+}
