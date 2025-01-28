@@ -1,0 +1,402 @@
+//    // Metode, der modtager en streng som parameter og udskriver den
+//    static void PrintInput(string input)
+//    {
+//        Console.WriteLine("Du indtastede: " + input);
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        // Beder brugeren om at indtaste en tekststreng
+//        Console.WriteLine("Indtast en tekststreng:");
+//        string userInput = Console.ReadLine();
+
+//        // Kalder metoden og sender brugerens input som parameter
+//        PrintInput(userInput);
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+
+
+    //    // Metode, der returnerer en streng
+//    static string GetGreeting()
+//    {
+//        return "Hello World!";
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        // Kalder metoden og gemmer resultatet i en variabel
+//        string message = GetGreeting();
+
+//        // Bruger resultatet som input til Console.WriteLine()
+//        Console.WriteLine(message);
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+
+
+//    // Metode, der tager to tal som parametre, lægger dem sammen og returnerer summen
+//    static int CalculateSum(int num1, int num2)
+//    {
+//        return num1 + num2;
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        // Beder brugeren om at indtaste tre tal
+//        Console.WriteLine("Indtast det første tal:");
+//        int number1 = int.Parse(Console.ReadLine());
+
+//        Console.WriteLine("Indtast det andet tal:");
+//        int number2 = int.Parse(Console.ReadLine());
+
+//        // Kalder metoden med de to tal som parametre og gemmer resultatet
+//        int sum = CalculateSum(number1, number2);
+
+//        // Udskriver summen i konsollen
+//        Console.WriteLine("Summen af de tre tal er: " + sum);
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+
+
+
+//    // Metode, der tager tre tal som parametre, lægger dem sammen og returnerer summen
+//    static int Sumregner(int num1, int num2, int num3)
+//    {
+//        return num1 - num2 - num3;
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        // Beder brugeren om at indtaste tre tal
+//        Console.WriteLine("Indtast det første tal:");
+//        int number1 = int.Parse(Console.ReadLine());
+
+//        Console.WriteLine("Indtast det andet tal:");
+//        int number2 = int.Parse(Console.ReadLine());
+
+//        Console.WriteLine("Indtast det andet tal:");
+//        int number3 = int.Parse(Console.ReadLine());
+
+//        // Kalder metoden med de tre tal som parametre og gemmer resultatet
+//        int sum = Sumregner(number1, number2, number3);
+
+//        // Udskriver summen i konsollen
+//        Console.WriteLine("Summen af de tre tal er: " + sum);
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+
+
+
+    // Metode, der lægger tre tal sammen
+    static int Add(int num1, int num2, int num3)
+    {
+        return num1 + num2 + num3;
+    }
+
+    // Metode, der trækker tre tal fra
+    static int Subtract(int num1, int num2, int num3)
+    {
+        return num1 - num2 - num3;
+    }
+
+    // Metode, der ganger tre tal
+    static int Multiply(int num1, int num2, int num3)
+    {
+        return num1 * num2 * num3;
+    }
+
+    static void Main(string[] args)
+    {
+        // Beder brugeren om at indtaste tre tal
+        Console.WriteLine("Indtast det første tal:");
+        int number1 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Indtast det andet tal:");
+        int number2 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Indtast det tredje tal:");
+        int number3 = int.Parse(Console.ReadLine());
+
+        // Beder brugeren om at vælge en operation
+        Console.WriteLine("Vælg en operation: ");
+        Console.WriteLine("1: Plus");
+        Console.WriteLine("2: Minus");
+        Console.WriteLine("3: Gange");
+        int choice = int.Parse(Console.ReadLine());
+
+        // Behandler brugerens valg og kalder den relevante metode
+        int result;
+        switch (choice) {
+            case 1: // Plus
+                result = Add(number1, number2, number3);
+                Console.WriteLine("Summen af de tre tal er: " + result);
+                break;
+            case 2: // Minus
+                result = Subtract(number1, number2, number3);
+                Console.WriteLine("Resultatet af subtraktion er: " + result);
+                break;
+            case 3: // Gange
+                result = Multiply(number1, number2, number3);
+                Console.WriteLine("Produktet af de tre tal er: " + result);
+                break;
+            default:
+                Console.WriteLine("Ugyldigt valg! Prøv igen.");
+                break;
+        }
+
+        Console.ReadKey();
+    }
+}
+
+
+
+
+
+
+
+
+
+//    // Metode, der lægger tre tal sammen
+//    static int plus(int num1, int num2, int num3)
+//    {
+//        return num1 + num2 + num3;
+//    }
+
+//    // Metode, der trækker tre tal fra
+//    static int Minus(int num1, int num2, int num3)
+//    {
+//        return num1 - num2 - num3;
+//    }
+
+//    // Metode, der ganger tre tal
+//    static int Gange(int num1, int num2, int num3)
+//    {
+//        return num1 * num2 * num3;
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        // Beder brugeren om at indtaste tre tal
+//        Console.WriteLine("Indtast det første tal:");
+//        int number1 = int.Parse(Console.ReadLine());
+
+//        Console.WriteLine("Indtast det andet tal:");
+//        int number2 = int.Parse(Console.ReadLine());
+
+//        Console.WriteLine("Indtast det tredje tal:");
+//        int number3 = int.Parse(Console.ReadLine());
+
+//        // Beder brugeren om at vælge en operation
+//        Console.WriteLine("Vælg en operation: ");
+//        Console.WriteLine("1: Plus");
+//        Console.WriteLine("2: Minus");
+//        Console.WriteLine("3: Gange");
+//        int choice = int.Parse(Console.ReadLine());
+
+//        // Behandler brugerens valg og kalder den relevante metode
+//        int result;
+//        switch (choice) {
+//            case 1: // Plus
+//                result = plus(number1, number2, number3);
+//                Console.WriteLine("Summen af de tre tal er: " + result);
+//                break;
+//            case 2: // Minus
+//                result = Minus(number1, number2, number3);
+//                Console.WriteLine("Resultatet af subtraktion er: " + result);
+//                break;
+//            case 3: // Gange
+//                result = Gange(number1, number2, number3);
+//                Console.WriteLine("Produktet af de tre tal er: " + result);
+//                break;
+//            default:
+//                Console.WriteLine("Ugyldigt valg! Prøv igen.");
+//                break;
+//        }
+
+//        Console.ReadKey();
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+    // Metode, der bestemmer besked baseret på alder
+    static string Grænsemåler(string navn, int alder)
+    {
+        if (alder >= 0 && alder <= 1) {
+            return $"{navn}, du er nyfødt";
+        }
+        else if (alder > 2 && alder <= 3) {
+            return $"{navn}, Du er i dagpleje eller vuggestue";
+        }
+        else if (alder >= 4 && alder <= 5) {
+            return $"{navn}, Du er i børnehave";
+        }
+        else if (alder >= 6 && alder <= 18) {
+            return $"{navn}, Du går i skole";
+        }
+        else if (alder > 18) {
+            return $"{navn}, Nu begynder livet at blive alvor";
+        }
+        else {
+            return $"{navn}, alderen du indtastede er ikke gyldig";
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        // Beder brugeren om at indtaste navn
+        Console.WriteLine("Indtast dit navn:");
+        string navn = Console.ReadLine();
+
+        // Beder brugeren om at indtaste alder
+        Console.WriteLine("Indtast din alder:");
+        int alder;
+
+        // Tjekker, om input er gyldigt
+        if (int.TryParse(Console.ReadLine(), out alder)) {
+            // Kalder metoden og udskriver resultatet
+            string result = Grænsemåler(navn, alder);
+            Console.WriteLine(result);
+        }
+        else {
+            Console.WriteLine("Ugyldigt input! Vær sikker på at indtaste et tal for alder.");
+        }
+
+        // Venter på et tastetryk, før programmet lukker
+        Console.ReadKey();
+    }
+}
+
+
+
+
+
+
+
+    // Metode, der splitter en komma separeret string og returnerer et array
+    static string[] opdelerikomma(string input)
+    {
+        // Splitter stringen baseret på komma
+        string[] værdier = input.Split(',');
+        return værdier;
+    }
+
+    static void Main(string[] args)
+    {
+        // Beder brugeren om at indtaste en komma-separeret string
+        Console.WriteLine("Indtast en streng med værdier adskilt af kommaer:");
+        string input = Console.ReadLine();
+
+        // Kalder metoden for at opdele string
+        string[] array = opdelerikomma(input);
+
+        // Udskriver størrelsen af arrayet
+        Console.WriteLine($"\nArrayet indeholder {array.Length} værdier:");
+
+        // Udskriver hver værdi i arrayet
+        for (int i = 0; i < array.Length; i++) {
+            Console.WriteLine($"Værdi {i + 1}: {array[i].Trim()}");
+        }
+
+        Console.ReadKey();
+    }
+
+
+
+
+
+
+
+    // Metode til at generere et tilfældigt tal mellem 1 og 25
+    static int TilfældigtTal()
+    {
+        Random random = new Random();
+        return random.Next(1, 25); // Øvre grænse er eksklusiv, så vi bruger 26
+    }
+
+    // Metode til at tjekke, om brugerens gæt er korrekt
+    static bool TjekGæt(int brugerGæt, int korrektTal)
+    {
+        return brugerGæt == korrektTal;
+    }
+
+    // Metode der fortæller brugeren, om gættet er for højt eller for lavt
+    static void GætFeedback(int brugerGæt, int korrektTal)
+    {
+        if (brugerGæt < korrektTal) {
+            Console.WriteLine("Dit gæt er for lavt.");
+        }
+        else if (brugerGæt > korrektTal) {
+            Console.WriteLine("Dit gæt er for højt.");
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        // Generer det tilfældige tal
+        int korrektTal = TilfældigtTal();
+
+        Console.WriteLine("Velkommen til Gæt et tal spillet ");
+        Console.WriteLine("Jeg har valgt et tilfældigt tal mellem 1 og 25.");
+        Console.WriteLine("Du har op til 5 forsøg til at gætte det rigtige tal.\n");
+
+        int forsøg = 0;
+        bool harGættetRigtigt = false;
+
+        while (forsøg < 5 && !harGættetRigtigt) {
+            // Beder brugeren om at indtaste et gæt
+            Console.Write($"Forsøg {forsøg + 1}: Indtast dit gæt: ");
+            int brugerGæt;
+
+            // Sikrer, at input er et gyldigt tal
+            if (int.TryParse(Console.ReadLine(), out brugerGæt)) {
+                // Tjekker om brugerens gæt er korrekt
+                if (TjekGæt(brugerGæt, korrektTal)) {
+                    Console.WriteLine("\nTillykke! Du har gættet det rigtige tal!");
+                    harGættetRigtigt = true;
+                }
+                else {
+                    GætFeedback(brugerGæt, korrektTal);
+                    forsøg++;
+                }
+            }
+            else {
+                Console.WriteLine("Ugyldigt input! Indtast venligst et tal mellem 1 og 25.");
+            }
+        }
+
+        // Hvis brugeren ikke gætter korrekt inden for 5 forsøg
+        if (!harGættetRigtigt) {
+            Console.WriteLine($"\nDesværre, du har ikke flere forsøg. Det rigtige tal var {korrektTal}.");
+        }
+
+        Console.WriteLine("\nTak for at spille!");
+        Console.ReadKey();
+    }
+}
